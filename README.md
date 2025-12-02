@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Naseej Admin Logo](assets/images/logo.png)
+![Naseej Admin Logo](assets/images/icon3.png)
 
 A comprehensive administrative dashboard for managing Egyptian handmade carpet e-commerce operations
 
