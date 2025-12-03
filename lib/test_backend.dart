@@ -4,7 +4,7 @@ import 'dart:convert';
 void main() async {
   print('🔍 Testing Naseej Backend Connection...\n');
 
-  final baseUrl = 'https://appforyou.store/backendnaseej';
+  final baseUrl = '';
 
   // Test 1: Check if backend is accessible
   print('1️⃣ Testing backend accessibility...');
@@ -46,4 +46,5 @@ void main() async {
   } catch (e) {
     print('❌ Login test failed: $e');
   }
+
 }
