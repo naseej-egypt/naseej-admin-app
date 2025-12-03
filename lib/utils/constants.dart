@@ -9,7 +9,7 @@ class AppConstants {
   static const bool useMockData = false;
 
   // API Configuration - YOUR HOSTING URL
-  static const String baseUrl = 'https://appforyou.store/backendnaseej';
+  static const String baseUrl = '';
   static const String apiVersion = '';
   static const String apiBaseUrl = '$baseUrl$apiVersion';
 
@@ -129,4 +129,5 @@ class AppConstants {
   static const String roleManager = 'manager';
 
   static List<String> get adminRoles => [roleAdmin, roleManager];
+
 }
