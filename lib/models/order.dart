@@ -356,7 +356,7 @@ class OrderItem {
       if (!productImage.startsWith('http')) {
         // Assuming your images are stored in the products directory
         // Update this base URL to match your server configuration
-        productImage = 'https://appforyou.store/backendnaseej/upload/products/$productImage';
+        productImage = '';
       }
     }
 
@@ -431,4 +431,5 @@ class Address {
     final components = [street, city, state, zipCode, country];
     return components.where((component) => component.isNotEmpty).join(', ');
   }
+
 }
