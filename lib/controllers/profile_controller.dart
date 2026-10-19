@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:get/get.dart';
+import '../utils/reactive.dart';
 import '../models/admin_user.dart';
 import '../services/profile_service.dart';
 import '../config/app_colors.dart';
@@ -14,8 +14,6 @@ class ProfileController extends GetxController {
   final hasError = false.obs;
   final errorMessage = ''.obs;
 
-  // Track last load time to avoid excessive API calls
-  DateTime? _lastLoadTime;
   String? _lastLoadedAdminId; // CRITICAL FIX: Track which admin's profile was loaded
 
   @override
@@ -50,7 +48,6 @@ class ProfileController extends GetxController {
         }
 
         profile.value = data;
-        _lastLoadTime = DateTime.now();
         _lastLoadedAdminId = data.id; // Store which admin's profile this is
 
         print('✅ Profile loaded successfully: ${data.name} (ID: ${data.id})');
@@ -77,7 +74,6 @@ class ProfileController extends GetxController {
 
       if (updatedProfile != null) {
         profile.value = updatedProfile;
-        _lastLoadTime = DateTime.now();
         _lastLoadedAdminId = updatedProfile.id;
 
         Get.snackbar(
@@ -178,7 +174,6 @@ class ProfileController extends GetxController {
   void clearProfile() {
     print('🧹 Clearing profile data');
     profile.value = null;
-    _lastLoadTime = null;
     _lastLoadedAdminId = null; // Clear admin ID tracking
     hasError.value = false;
     errorMessage.value = '';

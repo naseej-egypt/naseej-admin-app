@@ -1,11 +1,11 @@
-import 'package:get/get.dart';
+import '../utils/reactive.dart';
 import '../models/admin_user.dart';
 import '../services/api_service.dart';
 import '../utils/constants.dart';
 import 'auth_controller.dart';
 
 class AdminController extends GetxController {
-  final ApiService _apiService = Get.find<ApiService>();
+  final ApiService _apiService = ApiService();
 
   final admins = <AdminUser>[].obs;
   final filteredAdmins = <AdminUser>[].obs;

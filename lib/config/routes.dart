@@ -1,6 +1,4 @@
-// In config/routes.dart
-import 'package:get/get.dart';
-import '../controllers/admin_controller.dart';
+import 'package:flutter/material.dart';
 import '../screens/admin/add_admin_screen.dart';
 import '../screens/admin/admin_details_screen.dart';
 import '../screens/admin/admins_screen.dart';
@@ -54,112 +52,44 @@ class AppRoutes {
   static const String adminDetails = '/admin-details';
   static const String addAdmin = '/add-admin';
   static const String changeAdminPassword = '/change-admin-password';
-  static const productDetails = '/products/details';
+  static const String productDetails = '/products/details';
 
-  static List<GetPage> pages = [
-    GetPage(
-      name: login,
-      page: () => const LoginScreen(),
-    ),
-    GetPage(
-      name: dashboard,
-      page: () => DashboardScreen(),
-    ),
-    GetPage(
-      name: products,
-      page: () => const ProductsScreen(),
-    ),
-    GetPage(
-      name: addProduct,
-      page: () => const AddProductScreen(),
-    ),
-    GetPage(
-      name: editProduct,
-      page: () => const EditProductScreen(),
-    ),
-    GetPage(
-      name: categories,
-      page: () => const CategoriesScreen(),
-    ),
-    GetPage(
-      name: categoryForm,
-      page: () => const CategoryFormScreen(),
-    ),
-    GetPage(
-      name: orders,
-      page: () => const OrdersScreen(),
-    ),
-    GetPage(
-      name: orderDetails,
-      page: () => const OrderDetailsScreen(),
-    ),
-    GetPage(
-      name: customers,
-      page: () => const CustomersScreen(),
-    ),
-    GetPage(
-      name: customerDetails,
-      page: () => const CustomerDetailsScreen(),
-    ),
-    GetPage(
-      name: delivery,
-      page: () => const DeliveryScreen(),
-    ),
-    GetPage(
-      name: deliveryForm,
-      page: () => const DeliveryFormScreen(),
-    ),
-    GetPage(
-      name: profile,
-      page: () => const ProfileScreen(),
-    ),
-    GetPage(
-      name: changePassword,
-      page: () => const ChangePasswordScreen(),
-    ),
-    GetPage(
-      name: about,
-      page: () => const AboutScreen(),
-    ),
-    GetPage(
-      name: notifications,
-      page: () => const NotificationsScreen(),
-    ),
-    GetPage(
-      name: stores,
-      page: () => const StoresScreen(),
-    ),
-    GetPage(
-      name: storeForm,
-      page: () => const StoreFormScreen(),
-    ),
-    GetPage(
-      name: storeDetails,
-      page: () => const StoreDetailsScreen(),
-    ),
+  static Map<String, WidgetBuilder> get routes => {
+    login: (context) => const LoginScreen(),
+    dashboard: (context) => const DashboardScreen(),
+    products: (context) => const ProductsScreen(),
+    addProduct: (context) => const AddProductScreen(),
+    editProduct: (context) => const EditProductScreen(),
+    categories: (context) => const CategoriesScreen(),
+    categoryForm: (context) => const CategoryFormScreen(),
+    orders: (context) => const OrdersScreen(),
+    orderDetails: (context) => const OrderDetailsScreen(),
+    customers: (context) => const CustomersScreen(),
+    customerDetails: (context) => const CustomerDetailsScreen(),
+    delivery: (context) => const DeliveryScreen(),
+    deliveryForm: (context) => const DeliveryFormScreen(),
+    profile: (context) => const ProfileScreen(),
+    changePassword: (context) => const ChangePasswordScreen(),
+    about: (context) => const AboutScreen(),
+    notifications: (context) => const NotificationsScreen(),
+    stores: (context) => const StoresScreen(),
+    storeForm: (context) => const StoreFormScreen(),
+    storeDetails: (context) => const StoreDetailsScreen(),
+    admins: (context) => const AdminsScreen(),
+    adminDetails: (context) => const AdminDetailsScreen(),
+    addAdmin: (context) => const AddAdminScreen(),
+    changeAdminPassword: (context) => const ChangeAdminPasswordScreen(),
+    productDetails: (context) => const ProductDetailsScreen(),
+  };
 
-    GetPage(
-      name: admins,
-      page: () => const AdminsScreen(),
-      binding: BindingsBuilder(() {
-        Get.put(AdminController());
-      }),
-    ),
-    GetPage(
-      name: adminDetails,
-      page: () => const AdminDetailsScreen(),
-    ),
-    GetPage(
-      name: addAdmin,
-      page: () => const AddAdminScreen(),
-    ),
-    GetPage(
-      name: changeAdminPassword,
-      page: () => const ChangeAdminPasswordScreen(),
-    ),
-    GetPage(
-      name: AppRoutes.productDetails,
-      page: () => const ProductDetailsScreen(),
-    ),
-  ];
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+    final builder = routes[settings.name];
+    if (builder != null) {
+      return MaterialPageRoute(
+        builder: builder,
+        settings: settings,
+      );
+    }
+    return null;
+  }
 }

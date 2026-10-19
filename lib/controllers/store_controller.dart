@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:get/get.dart';
+import '../utils/reactive.dart';
 import '../models/store.dart';
 import '../services/store_service.dart';
 import '../utils/api_helper.dart';

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../config/app_colors.dart';
 
 class TopListCard extends StatelessWidget {
@@ -33,7 +32,7 @@ class TopListCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: Get.textTheme.titleMedium?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ),

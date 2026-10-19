@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:naseej_admin_app/utils/reactive.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../config/app_colors.dart';
 import '../../config/routes.dart';
@@ -338,7 +338,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 Row(
                   children: [
                     Text(
-                      '\$${product!.effectivePrice?.toStringAsFixed(2) ?? product!.price.toStringAsFixed(2)}',
+                      '\$${product!.effectivePrice.toStringAsFixed(2)}',
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         color: AppColors.primary,
                         fontWeight: FontWeight.bold,
@@ -367,7 +367,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
-                '${product!.discountPercentage?.toStringAsFixed(0) ?? product!.discountPercentage}% OFF',
+                '${product!.discountPercentage.toStringAsFixed(0)}% OFF',
                 style: const TextStyle(
                   color: AppColors.white,
                   fontWeight: FontWeight.bold,

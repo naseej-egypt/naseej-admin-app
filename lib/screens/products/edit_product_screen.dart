@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:naseej_admin_app/utils/reactive.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../config/app_colors.dart';
@@ -126,7 +126,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
         imageQuality: 80,
       );
 
-      if (pickedFiles != null) {
+      if (pickedFiles.isNotEmpty) {
         final remainingSlots = 5 - totalImages;
         final filesToAdd = pickedFiles.take(remainingSlots).toList();
 

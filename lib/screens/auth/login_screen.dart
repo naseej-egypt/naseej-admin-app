@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:naseej_admin_app/utils/reactive.dart';
 import '../../config/app_colors.dart';
 import '../../controllers/auth_controller.dart';
 import '../../utils/internet_checker.dart';
@@ -218,50 +218,6 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  void _showForgotPasswordDialog() {
-    final emailController = TextEditingController();
-
-    Get.dialog(
-      AlertDialog(
-        title: const Text('Reset Password'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Text(
-              'Enter your email address and we\'ll send you a password reset link.',
-            ),
-            const SizedBox(height: 16),
-            CustomTextField(
-              controller: emailController,
-              label: 'Email',
-              hint: 'Enter your email',
-              keyboardType: TextInputType.emailAddress,
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Get.back(),
-            child: const Text('Cancel'),
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              if (emailController.text.isNotEmpty) {
-                // Check internet before reset password
-                final hasInternet = await _checkInternetBeforeLogin();
-                if (hasInternet) {
-                  await _authController.resetPassword(emailController.text);
-                  Get.back();
-                }
-              }
-            },
-            child: const Text('Send'),
-          ),
-        ],
       ),
     );
   }

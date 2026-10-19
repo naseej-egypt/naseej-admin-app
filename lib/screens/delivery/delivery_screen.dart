@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:naseej_admin_app/utils/reactive.dart';
 import '../../config/app_colors.dart';
 import '../../config/routes.dart';
 import '../../controllers/delivery_controller.dart';
 import '../../models/delivery_man.dart';
 import '../../widgets/sidebar_menu.dart';
-import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text_field.dart';
 
 class DeliveryScreen extends StatefulWidget {
@@ -457,40 +456,6 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
           ],
         ),
       ),
-    );
-  }
-
-  // Helper method for info rows
-  Widget _buildInfoRow(IconData icon, String text) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Icon(icon, size: 14),
-        const SizedBox(width: 4),
-        Expanded(
-          child: Text(
-            text,
-            style: const TextStyle(fontSize: 13),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ),
-      ],
-    );
-  }
-
-  // Helper method for stat items
-  Widget _buildStatItem(IconData icon, String text, {Color? color}) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(icon, size: 14, color: color),
-        const SizedBox(width: 4),
-        Text(
-          text,
-          style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
-        ),
-      ],
     );
   }
 

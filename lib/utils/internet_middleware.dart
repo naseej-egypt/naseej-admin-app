@@ -1,25 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:naseej_admin_app/config/app_colors.dart';
 import 'package:naseej_admin_app/utils/internet_checker.dart';
 
-/// Middleware to check internet before navigating to pages
-class InternetMiddleware extends GetMiddleware {
-  @override
-  int? get priority => 1;
-
-  @override
-  RouteSettings? redirect(String? route) {
-    // Check internet connection before navigating
-    return null;
-  }
-
-  @override
-  GetPage? onPageCalled(GetPage? page) {
-    // You can add internet check here if needed
-    return super.onPageCalled(page);
-  }
-}
+/// Middleware / Observer to check internet before navigating
+class InternetMiddleware extends NavigatorObserver {}
 
 /// Show no internet dialog
 void showNoInternetDialog(BuildContext context) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:naseej_admin_app/utils/reactive.dart';
 import 'package:intl/intl.dart';
 import '../../config/app_colors.dart';
 import '../../controllers/notification_controller.dart';

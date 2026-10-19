@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../models/admin_user.dart';
@@ -8,7 +7,7 @@ import '../utils/api_helper.dart';
 import 'api_service.dart';
 
 class ProfileService {
-  final ApiService _apiService = Get.find<ApiService>();
+  final ApiService _apiService = ApiService();
 
   Future<AdminUser?> getProfile() async {
     try {

@@ -1,10 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:get/get.dart';
 import '../utils/constants.dart';
 import '../utils/api_helper.dart';
 
-class ApiService extends GetxController {
+class ApiService {
   // POST Request - Fixed for form data with special handling for JSON arrays
   Future<Map<String, dynamic>> post(
       String endpoint,

@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'dart:convert';
-import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import '../models/product.dart';
 import '../utils/constants.dart';
@@ -8,7 +7,7 @@ import '../utils/api_helper.dart';
 import 'api_service.dart';
 
 class ProductService {
-  final ApiService _apiService = Get.find<ApiService>();
+  final ApiService _apiService = ApiService();
 
   Future<List<Product>> getProducts() async {
     try {

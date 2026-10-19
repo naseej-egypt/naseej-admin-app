@@ -1,12 +1,9 @@
-import 'dart:convert';
-import 'package:get/get.dart';
 import '../models/customer.dart';
 import '../utils/constants.dart';
-import '../utils/api_helper.dart';
 import 'api_service.dart';
 
 class CustomerService {
-  final ApiService _apiService = Get.find<ApiService>();
+  final ApiService _apiService = ApiService();
 
   Future<List<Customer>> getCustomers() async {
     try {

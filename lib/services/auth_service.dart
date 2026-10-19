@@ -1,11 +1,10 @@
-import 'package:get/get.dart';
 import '../models/admin_user.dart';
 import '../utils/api_helper.dart';
 import '../utils/constants.dart';
 import 'api_service.dart';
 
-class AuthService extends GetxController {
-  final ApiService _apiService = Get.find<ApiService>();
+class AuthService {
+  final ApiService _apiService = ApiService();
 
   AdminUser? _currentAdmin;
 

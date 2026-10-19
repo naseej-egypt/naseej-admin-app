@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:naseej_admin_app/config/app_colors.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'reactive.dart';
 
 /// Show exit confirmation dialog with app theme styling
 Future<bool> alertExitApp(BuildContext context) async {

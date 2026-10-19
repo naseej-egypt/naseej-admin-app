@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:naseej_admin_app/utils/reactive.dart';
 import '../../config/app_colors.dart';
 import '../../config/routes.dart';
 import '../../controllers/admin_controller.dart';
@@ -529,7 +529,7 @@ class _AdminsScreenState extends State<AdminsScreen> {
                 );
               }
             },
-            child: Text(action.capitalizeFirst!),
+            child: Text(action.capitalizeFirst),
           ),
         ],
       ),

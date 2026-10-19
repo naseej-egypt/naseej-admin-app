@@ -1,4 +1,4 @@
-import 'package:get/get.dart';
+import '../utils/reactive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/notification_model.dart';
 import '../services/notification_service.dart';
@@ -49,18 +49,6 @@ class NotificationController extends GetxController {
       loadNotifications(),
       loadUnreadCount(),
     ]);
-  }
-
-  Future<void> _testApiConnection() async {
-    print('🔔 Testing API connection...');
-
-    // CRITICAL FIX: Verify we have a token before making the request
-    final token = await ApiHelper.getToken();
-    if (token == null || token.isEmpty) {
-      throw Exception('Unauthorized access. Please login.');
-    }
-
-    await _notificationService.testApiConnection();
   }
 
   Future<void> loadNotifications() async {
@@ -132,16 +120,11 @@ class NotificationController extends GetxController {
 
       final data = await _notificationService.getUnreadCount();
 
-      // CRITICAL FIX: Calculate unread count based on visible notifications only
-      // (exclude cleared notifications for this admin)
-      final prefs = await SharedPreferences.getInstance();
-      final clearedIdsJson = prefs.getStringList(_clearedNotificationsKey) ?? [];
-      final clearedIds = Set<String>.from(clearedIdsJson);
-
       // Get actual unread count from API
       final apiUnreadCount = data['unread_count'] ?? 0;
 
       // If we have notifications loaded, calculate based on visible ones
+      // (already filtered for cleared notifications in loadNotifications)
       if (notifications.isNotEmpty) {
         final visibleUnreadCount = notifications.where((n) => !n.isRead).length;
         unreadCount.value = visibleUnreadCount;

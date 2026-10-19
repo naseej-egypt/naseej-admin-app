@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import '../utils/reactive.dart';
 import '../config/app_colors.dart';
 import '../config/routes.dart';
 import '../controllers/auth_controller.dart';

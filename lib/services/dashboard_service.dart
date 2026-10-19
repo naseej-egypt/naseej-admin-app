@@ -1,10 +1,8 @@
-import 'package:get/get.dart';
 import '../models/order.dart';
-import '../utils/constants.dart';
 import 'api_service.dart';
 
 class DashboardService {
-  final ApiService _apiService = Get.find<ApiService>();
+  final ApiService _apiService = ApiService();
 
   // Get ALL dashboard statistics in ONE API call
   Future<Map<String, dynamic>> getDashboardStats() async {

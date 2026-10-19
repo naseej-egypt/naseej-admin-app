@@ -1,10 +1,8 @@
-import 'package:get/get.dart';
 import '../models/notification_model.dart';
-import '../utils/constants.dart';
 import 'api_service.dart';
 
 class NotificationService {
-  final ApiService _apiService = Get.find<ApiService>();
+  final ApiService _apiService = ApiService();
 
   Future<List<AppNotification>> getNotifications({
     String? type,

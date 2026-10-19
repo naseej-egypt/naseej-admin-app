@@ -37,7 +37,7 @@ class Customer {
         try {
           final decoded = jsonDecode(json['addresses']);
           if (decoded is List) {
-            addressList = (decoded as List)
+            addressList = decoded
                 .map((addr) => CustomerAddress.fromJson(addr))
                 .toList();
           }

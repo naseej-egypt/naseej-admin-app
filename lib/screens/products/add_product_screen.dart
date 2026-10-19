@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:naseej_admin_app/utils/reactive.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../config/app_colors.dart';
 import '../../controllers/product_controller.dart';
@@ -87,7 +87,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
         maxHeight: 1200,
         imageQuality: 80,
       );
-      if (pickedFiles != null) {
+      if (pickedFiles.isNotEmpty) {
         setState(() {
           selectedImages.addAll(pickedFiles.map((file) => File(file.path)));
         });

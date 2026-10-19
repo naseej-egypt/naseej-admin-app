@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../config/app_colors.dart';
 
 class ChartCard extends StatelessWidget {
@@ -28,7 +27,7 @@ class ChartCard extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: Get.textTheme.titleMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
               ),

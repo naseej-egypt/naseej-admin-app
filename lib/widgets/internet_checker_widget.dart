@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:naseej_admin_app/utils/internet_checker.dart';
-import 'package:naseej_admin_app/config/app_colors.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 /// Widget that shows internet connection status and triggers refresh

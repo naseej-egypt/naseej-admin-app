@@ -1,4 +1,4 @@
-import 'package:get/get.dart';
+import '../utils/reactive.dart';
 
 /// Global controller to track current route
 /// Put this in: lib/controllers/route_controller.dart

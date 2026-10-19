@@ -1,4 +1,4 @@
-import 'package:get/get.dart';
+import '../utils/reactive.dart';
 import '../models/admin_user.dart';
 import '../services/auth_service.dart';
 import '../config/routes.dart';
@@ -8,7 +8,7 @@ import 'profile_controller.dart';
 import 'notification_controller.dart';
 
 class AuthController extends GetxController {
-  final AuthService _authService = Get.find<AuthService>();
+  final AuthService _authService = AuthService();
 
   final isLoading = false.obs;
   final errorMessage = ''.obs;

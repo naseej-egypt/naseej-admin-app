@@ -1,9 +1,8 @@
 import 'dart:io';
-import 'package:get/get.dart';
+import '../utils/reactive.dart';
 import '../models/category.dart';
 import '../services/category_service.dart';
 import '../config/app_colors.dart';
-import 'package:flutter/material.dart';
 
 class CategoryController extends GetxController {
   final CategoryService _categoryService = CategoryService();

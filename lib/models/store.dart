@@ -252,9 +252,6 @@ class Store {
 
   // Helper method to validate if the time range makes sense
   bool get hasValidHours {
-    final openingMinutes = openingTime.hour * 60 + openingTime.minute;
-    final closingMinutes = closingTime.hour * 60 + closingTime.minute;
-
     // Allow overnight operations (closing time can be less than opening time)
     // But ensure times are within valid 24-hour range
     return openingTime.hour >= 0 && openingTime.hour < 24 &&

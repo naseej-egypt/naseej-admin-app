@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:naseej_admin_app/utils/reactive.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
@@ -416,7 +416,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       );
     } catch (e) {
       // Close loading dialog if still open
-      if (Get.isDialogOpen ?? false) {
+      if (Get.isDialogOpen) {
         Get.back();
       }
 

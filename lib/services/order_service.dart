@@ -1,10 +1,8 @@
-import 'package:get/get.dart';
 import '../models/order.dart';
-import '../utils/api_helper.dart';
 import 'api_service.dart';
 
 class OrderService {
-  final ApiService _apiService = Get.find<ApiService>();
+  final ApiService _apiService = ApiService();
 
   Future<List<Order>> getOrders() async {
     try {

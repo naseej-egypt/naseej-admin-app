@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'internet_checker.dart';
 import 'internet_middleware.dart';
 import 'alterexitapp.dart';

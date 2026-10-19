@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import '../models/delivery_man.dart';
 import '../utils/constants.dart';
@@ -8,7 +7,7 @@ import '../utils/api_helper.dart';
 import 'api_service.dart';
 
 class DeliveryService {
-  final ApiService _apiService = Get.find<ApiService>();
+  final ApiService _apiService = ApiService();
 
   Future<List<DeliveryMan>> getDeliveryMen() async {
     try {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:naseej_admin_app/utils/reactive.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../config/app_colors.dart';
 import '../../config/routes.dart';
@@ -7,7 +7,6 @@ import '../../controllers/product_controller.dart';
 import '../../controllers/category_controller.dart';
 import '../../widgets/sidebar_menu.dart';
 import '../../widgets/custom_text_field.dart';
-import '../../widgets/custom_button.dart';
 
 class ProductsScreen extends StatefulWidget {
   const ProductsScreen({super.key});
